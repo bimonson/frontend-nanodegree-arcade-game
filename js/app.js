@@ -25,6 +25,25 @@ Enemy.prototype.render = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 
+// Hero class
+    // Constructor
+        // Properties
+            // x pos
+            // y pos
+            // Sprite image
+        // Methods
+            // Update position
+                // Check collision here
+                    // Did player x and y collide with enemy?
+                // Check win here
+                    // Did player x and y reach final tile?
+                // Render
+                    // Draw player sprite on current x and y coord position
+                // Handle keyboard input
+                    // Update player's x and y porperty according to input
+                // Reset Hero
+                    // Set x and y to starting x and y
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
