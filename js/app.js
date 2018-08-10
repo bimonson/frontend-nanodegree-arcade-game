@@ -35,9 +35,13 @@ Enemy.prototype.render = function() {
 class Hero {
     // Constructor
     constructor() {
-        this.x = 0;
-        this.y = 0;
         this.sprite = 'images/char-boy.png';
+        this.horizMove = 101;
+        this.vertMove = 83;
+        this.startX = this.horizMove * 2;
+        this.startY = (this.vertMove * 5) - 20;
+        this.x = this.startX;
+        this.y = this.startY;
     }
     // Methods
     // Draw player sprite on current x and y coord position
@@ -49,8 +53,22 @@ class Hero {
         // Did player x and y collide with enemy?
     // Check win here
         // Did player x and y reach final tile?
-    // Handle keyboard input
-        // Update player's x and y porperty according to input
+    // Update player's x and y porperty according to input
+    handleInput(input) {
+        switch(input) {
+            case 'up':
+                this.y -= this.vertMove;
+                break;
+            case 'right':
+                this.x += this.horizMove;
+                break;
+            case 'down':
+                this.y += this.vertMove;
+                break;
+            case 'left':
+                this.x -= this.horizMove;
+        }
+    }
     // Reset Hero
         // Set x and y to starting x and y
 }
