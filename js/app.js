@@ -5,9 +5,11 @@ var Enemy = function() {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.x = 0;
+    this.x = this.start;
     this.y = 0;
     this.horizMove = 101;
+    this.start = -this.horizMove
+    this.finish = this.horizMove * 5;
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -19,13 +21,15 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 
     // If enemy is not passed boundary
-    if(this.x < this.horizMove * 4) {
+    if(this.x < this.finish) {
         // Move forward
         // Increment x by speed * dt
         this.x += 200 * dt;
-    }
-        // else
+    } else {
         // Reset pos to start
+        this.x = this.start;
+    }
+
 
 
 };
