@@ -57,16 +57,24 @@ class Hero {
     handleInput(input) {
         switch(input) {
             case 'up':
-                this.y -= this.vertMove;
+                if(this.y > this.vertMove) {
+                    this.y -= this.vertMove;
+                }
                 break;
             case 'right':
-                this.x += this.horizMove;
+                if(this.x < this.horizMove * 4) {
+                    this.x += this.horizMove;
+                }
                 break;
             case 'down':
-                this.y += this.vertMove;
+                if(this.y < this.vertMove * 4) {
+                    this.y += this.vertMove;
+                }
                 break;
             case 'left':
-                this.x -= this.horizMove;
+                if(this.x > 0) {
+                    this.x -= this.horizMove;
+                }
         }
     }
     // Reset Hero
