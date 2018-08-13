@@ -52,7 +52,7 @@ class Hero {
         this.horizMove = 101;
         this.vertMove = 83;
         this.startX = this.horizMove * 2;
-        this.startY = (this.vertMove * 5) - 20;
+        this.startY = (this.vertMove * 4) + 55;
         this.x = this.startX;
         this.y = this.startY;
     }
@@ -61,9 +61,19 @@ class Hero {
     render() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
-    // Update position
-    // Check collision here
-        // Did player x and y collide with enemy?
+
+    update() {
+        // Check collision here
+        for(let enemy of allEnemies) {
+            // Did player x and y collide with enemy?
+            if (this.y === enemy.y && (enemy.x + enemy.horizMove > this.x && enemy.x < this.x + this.horizMove)) {
+                console.log('Collide!');
+            }
+        }
+
+    }
+
+
     // Check win here
         // Did player x and y reach final tile?
     // Update player's x and y porperty according to input
