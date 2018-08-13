@@ -98,7 +98,9 @@ class Hero {
 // Now instantiate your objects.
 
 // Place all enemy objects in an array called allEnemies
-const beetle1 = new Enemy(-101, 0, 300);
+const beetle1 = new Enemy(-101*10, 0, 400);
+const beetle2 = new Enemy(-101, 83, 300);
+const beetle3 = new Enemy(-101, 83*2, 200);
 const allEnemies = [];
 
 // Place the player object in a variable called player
@@ -107,7 +109,7 @@ const player = new Hero();
 
 // Init allEnemies array
 // For each enemy create and push new Enemy object into above array
-allEnemies.push(beetle1);
+allEnemies.push(beetle1, beetle2, beetle3);
 
 
 // This listens for key presses and sends the keys to your
