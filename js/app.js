@@ -5,6 +5,9 @@ var Enemy = function() {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
+    this.x = 0;
+    this.y = 0;
+    this.horizMove = 101;
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -16,10 +19,15 @@ Enemy.prototype.update = function(dt) {
     // all computers.
 
     // If enemy is not passed boundary
+    if(this.x < this.horizMove * 4) {
         // Move forward
         // Increment x by speed * dt
-    // else
+        this.x += 200 * dt;
+    }
+        // else
         // Reset pos to start
+
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -83,14 +91,18 @@ class Hero {
 
 
 // Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 
+// Place all enemy objects in an array called allEnemies
+const beetle1 = new Enemy();
+const allEnemies = [];
+
+// Place the player object in a variable called player
 // New Hero object
 const player = new Hero();
 
 // Init allEnemies array
 // For each enemy create and push new Enemy object into above array
+allEnemies.push(beetle1);
 
 
 // This listens for key presses and sends the keys to your
