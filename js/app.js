@@ -66,12 +66,14 @@ class Hero {
         // Check collision here
         for(let enemy of allEnemies) {
             // Did player x and y collide with enemy?
-            if (this.y === enemy.y && (enemy.x + enemy.horizMove > this.x && enemy.x < this.x + this.horizMove)) {
-                console.log('Collide!');
+            if (this.y === enemy.y && (enemy.x + enemy.horizMove/2 > this.x && enemy.x < this.x + this.horizMove/2)) {
+                alert('Collide!');
             }
         }
 
     }
+
+
 
 
     // Check win here
