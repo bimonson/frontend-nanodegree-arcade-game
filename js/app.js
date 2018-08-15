@@ -55,6 +55,7 @@ class Hero {
         this.startY = (this.vertMove * 4) + 55;
         this.x = this.startX;
         this.y = this.startY;
+        this.victory = false;
     }
     // Methods
     // Draw player sprite on current x and y coord position
@@ -70,19 +71,13 @@ class Hero {
                 this.reset();
             }
         }
+        // Check win here
+            // Did player y reach final row?
+            if(this.y === 55) {
+                this.victory = true;
+            }
     }
 
-    // Reset player position to start upon collision
-    reset() {
-        this.x = this.startX;
-        this.y = this.startY;
-    }
-
-
-
-
-    // Check win here
-        // Did player x and y reach final tile?
     // Update player's x and y porperty according to input
     handleInput(input) {
         switch(input) {
