@@ -67,10 +67,15 @@ class Hero {
         for(let enemy of allEnemies) {
             // Did player x and y collide with enemy?
             if (this.y === enemy.y && (enemy.x + enemy.horizMove/2 > this.x && enemy.x < this.x + this.horizMove/2)) {
-                alert('Collide!');
+                this.reset();
             }
         }
+    }
 
+    // Reset player position to start upon collision
+    reset() {
+        this.x = this.startX;
+        this.y = this.startY;
     }
 
 
@@ -102,8 +107,11 @@ class Hero {
                 }
         }
     }
-    // Reset Hero
-        // Set x and y to starting x and y
+    // Reset Hero position to starting x and y
+    reset() {
+        this.x = this.startX;
+        this.y = this.startY;
+    }
 }
 
 
