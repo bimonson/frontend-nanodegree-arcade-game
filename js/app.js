@@ -1,19 +1,19 @@
 // Enemies our player must avoid
 class Enemy {
-    constructor(x, y, speed) {
+    constructor(x, y) {
         // Variables applied to each of our instances go here,
         // we've provided one for you to get started
         this.x = this.start;
         this.y = y + 55;
         this.horizMove = 101;
-        this.speed = speed;
+        this.speed = Math.floor(Math.random() * (600 - 300 + 1)) + 300;
         this.start = -this.horizMove;
         this.finish = this.horizMove * 5;
 
         // The image/sprite for our enemies, this uses
         // a helper we've provided to easily load images
         this.sprite = 'images/enemy-bug.png';
-    }
+    };
 
     // Methods
 
@@ -115,9 +115,9 @@ class Hero {
 // Now instantiate your objects.
 
 // Place all enemy objects in an array called allEnemies
-const beetle1 = new Enemy(-101*10, 0, 400);
-const beetle2 = new Enemy(-101, 83, 300);
-const beetle3 = new Enemy(-101, 83*2, 200);
+const beetle1 = new Enemy(-101*10, 0);
+const beetle2 = new Enemy(-101, 83);
+const beetle3 = new Enemy(-101, 83*2);
 const allEnemies = [];
 
 // Place the player object in a variable called player
