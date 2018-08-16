@@ -26,8 +26,22 @@ var Engine = (function(global) {
         id;
 
     const modal = document.querySelector('.modal__bg');
-    const replay = document.querySelector('.modal__button');
+    const replay = document.querySelector('.modal__button__replay');
+    const close = document.querySelector('.modal__close');
 
+    replay.addEventListener('click', function(){
+        modal.classList.toggle('hide');
+        player.reset();
+        player.victory = false;
+        win.requestAnimationFrame(main);
+    });
+
+    close.addEventListener('click', function(){
+        modal.classList.toggle('hide');
+        player.reset();
+        player.victory = false;
+        win.requestAnimationFrame(main);
+    });
 
     canvas.width = 505;
     canvas.height = 606;
