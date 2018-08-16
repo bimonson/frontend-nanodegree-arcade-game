@@ -47,9 +47,10 @@ class Enemy {
 // a handleInput() method.
 
 // Hero class
-class Hero {
+class Hero extends Enemy {
     // Constructor
     constructor() {
+        super();
         this.sprite = 'images/char-boy.png';
         this.horizMove = 101;
         this.vertMove = 83;
@@ -62,7 +63,7 @@ class Hero {
     // Methods
     // Draw player sprite on current x and y coord position
     render() {
-        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+        super.render();
     }
 
     update() {
@@ -74,10 +75,10 @@ class Hero {
             }
         }
         // Check win here
-            // Did player y reach final row?
-            if(this.y === 55) {
-                this.victory = true;
-            }
+        // Did player y reach final row?
+        if(this.y === 55) {
+            this.victory = true;
+        }
     }
 
     // Update player's x and y porperty according to input
