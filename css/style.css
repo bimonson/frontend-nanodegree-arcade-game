@@ -1,3 +1,70 @@
 body {
     text-align: center;
+    font-family: 'Coda', cursive;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the Game Completion Modal
+ */
+
+ .modal__bg {
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    transition: background 0.5s ease;
+    background: linear-gradient(160deg, rgba(2,204,186,0.8) 0%, rgba(170,126,205,0.8) 100%);
+    z-index: 1;
+}
+
+.modal__container {
+    position: relative;
+    justify-content: center;
+    margin: auto;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.modal__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid  #02ccba;
+}
+
+.modal__close {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.modal__button__replay {
+    margin: 1.5rem auto 1.5rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    font-size: 1.25rem;
+    font-family: 'Coda', cursive;
+    text-transform: uppercase;
+    color: white;
+    background: #02b3e4;
+    cursor: default;
+    border-style: none;
+}
+
+.modal__button__replay:hover {
+    background: #02ccba;
+}
+
+.modal__button__replay:active {
+    background: #2e3d49;
+}
+
+.hide {
+    display: none;
 }

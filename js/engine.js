@@ -25,6 +25,10 @@ var Engine = (function(global) {
         lastTime,
         id;
 
+    const modal = document.querySelector('.modal__bg');
+    const replay = document.querySelector('.modal__button');
+
+
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
@@ -62,7 +66,7 @@ var Engine = (function(global) {
         // Pause game upon successful completion
         if(player.victory === true) {
             win.cancelAnimationFrame(id);
-            console.log('WIN!');
+            modal.classList.toggle('hide');
         } else {
             id = win.requestAnimationFrame(main);
         }
